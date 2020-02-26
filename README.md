@@ -29,12 +29,6 @@ set number
 set hlsearch
 ```
 
-apt install firefox
-wget https://github.com/browsh-org/browsh/releases/download/v1.6.4/browsh_1.6.4_linux_amd64.deb
-apt install ./browsh_1.6.4_linux_amd64.deb
-rm ./browsh_1.6.4_linux_amd64.deb
-browsh
-
 # Download Splunk via command line
 ```
 wget -O splunk-8.0.2-a7f645ddaf91-linux-2.6-amd64.deb 'https://www.splunk.com/bin/splunk/DownloadActivityServlet?architecture=x86_64&platform=linux&version=8.0.2&product=splunk&filename=splunk-8.0.2-a7f645ddaf91-linux-2.6-amd64.deb&wget=true'
@@ -48,12 +42,21 @@ adminadmin
 vim /opt/splunk/etc/splunk-launch.conf
 OPTIMISTIC_ABOUT_FILE_LOCKING = 1
 
-In browser:
+In browser on host:
 0.0.0.0:88
 or
 localhost:88
 or
 127.0.0.1:88
+```
+
+# Instal textmode browser (optional)
+```
+apt install firefox
+wget https://github.com/browsh-org/browsh/releases/download/v1.6.4/browsh_1.6.4_linux_amd64.deb
+apt install ./browsh_1.6.4_linux_amd64.deb
+rm ./browsh_1.6.4_linux_amd64.deb
+browsh 127.0.0.1:8000
 ```
 
 # Run another docker console
